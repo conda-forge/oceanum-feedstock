@@ -1,5 +1,5 @@
 {% set name = "oceanum" %}
-{% set version = "0.12.6" %}
+{% set version = "0.12.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/oceanum-{{ version }}.tar.gz
-  sha256: b880a8921c32f682bb22d7016905f437224a0b24a0c7f4066c4bc7963574f888
+  sha256: 4e285c6ad3a16c141ebbb34eb25876ef939b0c1b56507e48817e46e01def22b7
 
 build:
   entry_points:
