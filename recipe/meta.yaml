@@ -45,8 +45,8 @@ requirements:
     - zarr <3
     - numcodecs <0.16.0
     - msgpack-python
-    - jsonpath-ng
-    - certifi
+    - python-jsonpath
+    - pip-system-certs
     - tabulate
 
 test:
