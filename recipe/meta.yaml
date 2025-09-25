@@ -44,9 +44,9 @@ requirements:
     - rioxarray
     - zarr <3
     - numcodecs <0.16.0
-    - msgpack
-    - python-jsonpath
-    - pip-system-certs
+    - msgpack-python
+    - jsonpath-ng
+    - certifi
 
 test:
   imports:
