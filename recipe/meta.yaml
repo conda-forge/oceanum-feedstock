@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/oceanum-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/oceanum-{{ version }}.tar.gz
   sha256: 431ab7874da9b0266dc1b4abe3a3c4a761e7dad18ea91a27f961ddac9fab4238
 
 build:
@@ -14,15 +14,15 @@ build:
     - oceanum = oceanum.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - aiohttp
     - click
     - decorator
@@ -48,6 +48,7 @@ test:
     - oceanum --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/oceanum-io/oceanum-python
