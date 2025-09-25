@@ -47,6 +47,7 @@ requirements:
     - msgpack-python
     - jsonpath-ng
     - certifi
+    - tabulate
 
 test:
   imports:
