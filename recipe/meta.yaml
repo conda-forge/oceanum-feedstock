@@ -1,5 +1,5 @@
 {% set name = "oceanum" %}
-{% set version = "0.15.3" %}
+{% set version = "1.0.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,24 +7,26 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/oceanum-{{ version }}.tar.gz
-  sha256: 431ab7874da9b0266dc1b4abe3a3c4a761e7dad18ea91a27f961ddac9fab4238
+  sha256: 43fc3dd37151d9adf9dc037f6dfad15cf886166637d90c74d5424b68d57affee
 
 build:
   entry_points:
-    - oceanum = oceanum.cli:main
+    - oceanum = oceanum.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.10
     - setuptools
     - pip
   run:
-    - python >=3.8
+    - python >=3.10
     - aiohttp
     - click
+    - cftime
+    - dask-core >=2021.3.0
     - decorator
     - fsspec
     - geojson-pydantic >=1.0
@@ -33,12 +35,18 @@ requirements:
     - numpy
     - orjson
     - pandas
+    - platformdirs
     - pyarrow
-    - python-snappy
+    - pydantic >=2.0
     - requests
     - shapely
     - xarray
-    - zarr
+    - rioxarray
+    - zarr <3
+    - numcodecs <0.16.0
+    - msgpack
+    - python-jsonpath
+    - pip-system-certs
 
 test:
   imports:
