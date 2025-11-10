@@ -14,7 +14,7 @@ build:
     - oceanum = oceanum.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -26,28 +26,27 @@ requirements:
     - aiohttp
     - click
     - cftime
-    - dask-core >=2021.3.0
+    - dask
     - decorator
     - fsspec
-    - geojson-pydantic >=1.0
+    - geojson-pydantic
     - geopandas
     - h5netcdf
+    - msgpack-python
+    - numcodecs <0.16.0
     - numpy
     - orjson
     - pandas
     - platformdirs
     - pyarrow
-    - pydantic >=2.0
+    - pydantic
+    - python-jsonpath
     - requests
     - shapely
+    - tabulate
     - xarray
     - rioxarray
     - zarr <3
-    - numcodecs <0.16.0
-    - msgpack-python
-    - python-jsonpath
-    - pip-system-certs
-    - tabulate
 
 test:
   imports:
