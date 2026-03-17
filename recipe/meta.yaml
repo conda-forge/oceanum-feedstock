@@ -1,20 +1,20 @@
 {% set name = "oceanum" %}
-{% set version = "1.0.13" %}
+{% set version = "1.0.17" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/oceanum-{{ version }}.tar.gz
-  sha256: ba1440a16fd182546303a5694d70fa1542f03c772e5a9fdb66f20587c9904097
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/oceanum-{{ version }}.tar.gz
+  sha256: a13b0dd7d03d6c7a17bfc319466de5ab5553ae44701716e9d320e936bf80cfc6
 
 build:
   entry_points:
     - oceanum = oceanum.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
