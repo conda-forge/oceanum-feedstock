@@ -47,6 +47,8 @@ requirements:
     - xarray
     - rioxarray
     - zarr <3
+    - netcdf4
+    
 
 test:
   imports:
