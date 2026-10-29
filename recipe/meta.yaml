@@ -1,5 +1,5 @@
 {% set name = "oceanum" %}
-{% set version = "1.2.1" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/oceanum-{{ version }}.tar.gz
-  sha256: 53ff3336153232a58fd2711336824c4c76397c8b31ba7a795f93c547ffbdc431
+  sha256: 7b26c4c855320e8ed44b4143ba7ae247b623ce87aa9220aaf4a6617f97c93115
 
 build:
   entry_points:
